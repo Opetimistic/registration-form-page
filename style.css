@@ -6,7 +6,7 @@
 
 body{
     font-size: 16px;
-    /* background-color: black; */
+    
 }
 main{
     overflow: auto;
@@ -18,14 +18,7 @@ main{
 }
 
 .container{
-    
-    /* margin: 6% auto;
-    /* padding: 50px; 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 70%;
-    height: 75vh;
-    align-items: center;  */
+
     height: inherit;
     width: 55%;
     margin: 15vh auto;
@@ -45,7 +38,7 @@ main{
     font-weight: 700px;
     line-height: 1.1;
     color: #fafaf5;
-    /* color: #d9d9d6; */
+    
 }
 .text p{
     font-family: 'Poppins', sans-serif;
@@ -55,7 +48,7 @@ main{
     color: #d9d9d6;
 }
 
-.second{
+.second {
    flex: 1;
 }
 .second .button-second{
@@ -88,19 +81,19 @@ main{
     font-size: 12px;
 }
 
-.form-second .form{
+.form-second form{
     background-color: white;
     padding: 1.2em;
     border-radius: 5px;
     box-shadow: 0px 4px #b9595a;
     text-align: right;
-    /* width: 100%; */
 }
-.form-second table, td{
+
+.form-second form table, td{
     width: 100%;
 }
 
-.form input{
+.form-second input{
     width: inherit;
     text-align: left;
     margin: 10px 0px 0px 0px;
@@ -112,11 +105,11 @@ main{
     padding: 10px 25px 10px 25px;
 
 }
-.form input:focus{
+.form-second form input:focus{
     border: 1px solid hsl(249, 10%, 26%);
     outline: none;
 }
-.form input:invalid{
+.form-second form.invalid-check input:invalid{
     border: 1px solid hsl(0, 100%, 74%);
     outline: none;
     background-image: url("icon-error.svg");
@@ -126,7 +119,7 @@ main{
     background-repeat: no-repeat;
 }
 
-.form input:invalid + span[data-error]::after{
+.form-second form.invalid-check input:invalid + span[data-error]::after{
     content: attr(data-error);
     color: red;
     font-size: 10px;
@@ -143,7 +136,10 @@ main{
     border: 0.5px solid;
     border-radius: 5px;
 }
-.form p{
+#submit:hover{
+    cursor: pointer;
+}
+.form-second form p{
     font-weight: 300;
     font-size: 8px;
     text-align: center;
