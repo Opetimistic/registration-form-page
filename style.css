@@ -155,7 +155,7 @@ a{
 }
 
 
-@media screen and (max-width: 395px) {
+@media screen and (max-width: 428px) {
     main{
         background-image: url("bg-intro-mobile.png");
 
