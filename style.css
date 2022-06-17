@@ -6,30 +6,40 @@
 
 body{
     font-size: 16px;
-    background-color: black;
+    /* background-color: black; */
+}
+main{
+    overflow: auto;
+    background-color: hsl(0, 100%, 74%);
+    background-image: url("bg-intro-desktop.png");
+    background-blend-mode: overlay;
+    min-height: calc(100vh - 40px);
+    margin-top: 5vh;
 }
 
 .container{
-    background-image: url(bg-intro-desktop.png);
-    background-size: cover;
-    background-color: hsl(0deg 99% 73%);
-    margin: 6% auto;
-    /* padding: 50px; */
+    
+    /* margin: 6% auto;
+    /* padding: 50px; 
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 70%;
     height: 75vh;
-    align-items: center;    
+    align-items: center;  */
+    height: inherit;
+    width: 55%;
+    margin: 15vh auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .text{
-    
-    margin: 80px 2px 80px 50px;
-    padding: 45px;
-    /* align-items: center; */
-    width: 100%;
-    
+    padding: 2.3em;
+    color: white;
+    flex: 1;    
 }
+
 .text h1{
     font-family: 'Poppins', sans-serif;
     font-weight: 700px;
@@ -46,15 +56,26 @@ body{
 }
 
 .second{
-    display: grid;
-    grid-template-rows: 5% 90%;
-    grid-row-gap: 2.3em;
-    width: 75%;
-    margin-top: 25px;
-    height: 55vh;
-    margin-left: 10px;
+   flex: 1;
 }
-
+.second .button-second{
+    background-color: hsl(248, 32%, 49%);
+    text-align: center;
+    margin-bottom: 15px;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    box-shadow: 0px 4px #d3676f;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 10px 25px 10px 25px;
+}
+.second .button-second span{
+    font-weight: lighter;
+}
 .label-second{
     background-color: hsl(248, 32%, 49%);
     height: 6vh;
@@ -67,58 +88,54 @@ body{
     font-size: 12px;
 }
 
-.form-second{
+.form-second .form{
     background-color: white;
+    padding: 1.2em;
     border-radius: 5px;
-    margin-bottom: 50px;
-    height: 90%;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    box-shadow: 1px 5px hsl(325deg 27% 52%);
+    box-shadow: 0px 4px #b9595a;
+    text-align: right;
+    /* width: 100%; */
 }
-.form{
-    padding: 20px;
-}
-#fname{
-    width: 160%;
-    height: 5vh;
-    padding: 15px;
-    margin-top: 6px;
-    margin-bottom: 12px;
-    border: 0.2px solid gray;
-    border-radius: 3px;
+.form-second table, td{
+    width: 100%;
 }
 
-#lname{
-    width: 160%;
-    height: 5vh;
-    padding: 15px;
-    margin-bottom: 13px;
-    border: 0.2px solid gray;
+.form input{
+    width: inherit;
+    text-align: left;
+    margin: 10px 0px 0px 0px;
     border-radius: 5px;
-    
+    border: 2px solid #f6f6f6;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    padding: 10px 25px 10px 25px;
+
 }
-#email{
-    width: 160%;
-    height: 5vh;
-    padding: 15px;
-    margin-bottom: 13px;
-    border: 0.2px solid gray;
-    border-radius: 5px;
-    
+.form input:focus{
+    border: 1px solid hsl(249, 10%, 26%);
+    outline: none;
 }
-#password{
-    width: 160%;
-    height: 5vh;
-    padding: 15px;
-    margin-bottom: 13px;
-    border: 0.2px solid gray;
-    border-radius: 5px;
+.form input:invalid{
+    border: 1px solid hsl(0, 100%, 74%);
+    outline: none;
+    background-image: url("icon-error.svg");
+    background-size: 6%;
+    margin-right: 10px;
+    background-position: 95% 50%;
+    background-repeat: no-repeat;
 }
+
+.form input:invalid + span[data-error]::after{
+    content: attr(data-error);
+    color: red;
+    font-size: 10px;
+    font-family: "Poppins", sans-serif;
+
+}
+
 #submit{
-    width: 160%;
-    height: 5vh;
-    padding: 15px;
+    -webkit-appearance: none;
     text-align: center;
     background-color: hsl(154, 59%, 51%);
     color:white;
@@ -137,3 +154,27 @@ a{
     text-decoration: none;
 }
 
+
+@media screen and (max-width: 375px) {
+    main{
+        background-image: url("bg-intro-mobile.png");
+
+    }
+    .container{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .container .text{
+        text-align: center;
+        padding: 1.3em;
+    }
+    .container .text p{
+        text-align: center;
+        font-size: 16px;
+        line-height: 1.5em;
+        padding-bottom: 1.7em;
+    }
+}
