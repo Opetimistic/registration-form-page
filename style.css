@@ -138,6 +138,7 @@ main{
 }
 #submit:hover{
     cursor: pointer;
+    background-color: hsl(154, 64%, 70%);
 }
 .form-second form p{
     font-weight: 300;
